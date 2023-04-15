@@ -1,27 +1,91 @@
 .base {
     padding-top: 50px;
+    display    : flow-root;
+}
+
+.leftPan {
+    text-align: center;
+    float     : left;
+}
+
+.leftPan .description {
+    padding-top   : 5px;
+    padding-bottom: 10px;
+    text-align    : left;
+    padding-left  : 70px;
+}
+
+.oneLine {
+    color: aqua;
+    text-shadow: -2px -2px #ff0000;
+}
+
+.oneLine1 {
+    color: aqua;
+}
+
+.leftPan .description .firstLine {
+    font-size: 25px;
+    color    : skyblue;
+}
+
+.leftPan .description .name {
+    font-size: 60px;
+    color    : yellow;
+}
+
+.leftPan .smalldescription .name {
+    font-size : 20px;
+    color     : yellow;
+    text-align: left !important;
+}
+
+.leftPan .smalldescription .firstLine {
+    font-size : 20px;
+    color     : skyblue;
+    margin-top: 25px !important;
+}
+
+.leftPan .description .brief {
+    font-size: 20px;
+    color    : lightblue;
 }
 
 .imageSet {
-    height                  : 250px;
-    width                   : 250px;
-    border-radius           : 250px;
-    /* -webkit-box-shadow   : 0 0 25px 0 rgba(0, 0, 0, .8);
-    -moz-box-shadow         : 0 0 25px 0 rgba(0, 0, 0, .8);
-    box-shadow              : 0 0 25px 0 rgba(0, 0, 0, .8); */
-    -webkit-box-shadow      : 0 0 25px 0 rgb(142, 50, 50);
-    -moz-box-shadow         : 0 0 25px 0 rgb(142, 50, 50);
-    box-shadow              : 0 0 25px 0 rgb(142, 50, 50);
-    background-color        : #444;
-    background-color        : rgb(61, 53, 43);
-    background-color        : whitesmoke;
-    /* border               : 0.5px solid #444; */
-    padding                 : 10px;
-    padding-right           : 10px;
+    height               : 250px;
+    width                : 250px;
+    border-radius        : 250px;
+    -webkit-box-shadow   : 0 0 25px 0 white;
+    -moz-box-shadow      : 0 0 25px 0 white;
+    box-shadow           : 0 0 25px 0 white;
+    background-color     : #444;
+    background-color     : rgb(61, 53, 43);
+    background-color     : whitesmoke;
+    background-color     : #2e2d5d;
+    /* background-color  : #06061b; */
+    padding              : 10px;
+    padding-right        : 10px;
+}
+
+.imageSetSmall {
+    height               : 100px;
+    width                : 100px;
+    border-radius        : 100px;
+    /* -webkit-box-shadow: 0 0 25px 0 rgb(142, 50, 50);
+    -moz-box-shadow      : 0 0 25px 0 rgb(142, 50, 50);
+    box-shadow           : 0 0 25px 0 rgb(142, 50, 50); */
+    -webkit-box-shadow   : 0 0 25px 0 white;
+    -moz-box-shadow      : 0 0 25px 0 white;
+    box-shadow           : 0 0 25px 0 white;
+    background-color     : #444;
+    background-color     : rgb(61, 53, 43);
+    background-color     : whitesmoke;
+    background-color     : #2e2d5d;
+    padding              : 10px;
+    padding-right        : 10px;
 }
 
 .pages {
-    /* padding-top   : 10px; */
     padding-bottom: 10px;
 }
 
@@ -34,25 +98,26 @@
 }
 
 .content {
-    width              : 90%;
-    background-color   : white;
-    background-color   : ghostwhite;
-    border-radius      : 5px;
-    color              : #1B1F3B;
-    /* min-height      : 00px; */
-    padding            : 20px;
+    background-color: white;
+    background-color: ghostwhite;
+    background-color: #2e2d3c;
+    border-radius   : 5px;
+    color           : #1B1F3B;
+    padding         : 20px;
+    padding-right   : 0px;
+    width           : 95%;
 }
 
 .bottom-wrapper {
-    margin-top   : 50px;
-    padding      : 20px;
-    text-align   : center;
-    color        : rgb(105, 105, 213);
-    /* border-top: 1px dotted blueviolet; */
+    bottom        : 0px;
+    padding       : 20px;
+    padding-bottom: 5px !important;
+    text-align    : center;
+    color         : rgb(105, 105, 213);
+    font-size     : 10px;
 }
 
 .bottom-content {
-    /* border-top: 1px dotted blueviolet; */
     color  : rgb(105, 105, 213);
     padding: 10px;
 }
@@ -61,4 +126,138 @@
     margin      : 20px;
     padding     : 15px;
     padding-left: 25px;
+    font-size   : 75px !important;
+}
+
+.workList {
+    width       : 100%;
+    display     : block;
+    padding     : 10px;
+    padding-left: 25px;
+}
+
+.splitter {
+    display: none;
+}
+
+.topMenu {
+    display: none;
+}
+
+.bottom-Filler {
+    display: none;
+}
+
+.company {
+    padding         : 20px;
+    background-color: #04032a !important;
+    color           : silver !important;
+}
+
+.company img {
+    height       : 95px;
+    max-width    : 160px;
+    border-radius: 10px;
+    opacity      : 0.9;
+}
+
+.listIcon {
+    background-color         : #3F599E;
+    background-color         : #657ab6;
+    padding                  : 5px;
+    margin-right             : 10px;
+    border-top-left-radius   : 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.listText {
+    background-color  : #2b2972;
+    color             : white;
+    padding           : 10px 25px;
+    margin-left       : -40px;
+    border-radius     : 5px;
+    font-weight       : bold !important;
+    -webkit-box-shadow: inset 10px 0 0 0 #657ab6;
+    -moz-box-shadow   : inset 10px 0 0 0 #657ab6;
+    box-shadow        : inset 10px 0 0 0 #657ab6;
+}
+
+.listIconArtist {
+    background-color         : #7481e2;
+    padding                  : 5px;
+    margin-right             : 10px;
+    border-top-left-radius   : 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.listTextArtist {
+    color             : whitesmoke;
+    background-color  : #1B1F3B;
+    padding           : 10px 25px;
+    margin-left       : -40px;
+    border-radius     : 5px;
+    font-weight       : bold !important;
+    -webkit-box-shadow: inset 10px 0 0 0 #7481e2;
+    -moz-box-shadow   : inset 10px 0 0 0 #7481e2;
+    box-shadow        : inset 10px 0 0 0 #7481e2;
+}
+
+.chip {
+    padding  : 10px;
+    margin   : 20px;
+    display  : block;
+}
+
+@media (max-width: 900px) {
+    .leftPan .description {
+        text-align  : center !important;
+        padding-left: 10px !important;
+    }
+
+    .pages {
+        display: none !important;
+    }
+
+    .oneLine {
+        padding   : 10px !important;
+        font-size : 55px !important;
+        text-align: center !important;
+        font-weight: bolder !important;
+    }
+
+    .border-content {
+        margin   : 20px !important;
+        padding  : 10px !important;
+        font-size: 45px !important;
+    }
+
+    .workList {
+        padding: 10px !important;
+    }
+
+    .splitter {
+        display: block;
+        height : 5px;
+        width  : 100%;
+    }
+
+    .topMenu {
+        display   : block;
+        text-align: center;
+        padding   : 5px;
+        position  : fixed;
+        width     : 100%;
+        background: #1B1F3B;
+        z-index   : 10000;
+    }
+
+    .content {
+        border-radius: 5px;
+        width        : 100%;
+    }
+
+    .bottom-Filler {
+        display: block;
+        height : 30px;
+    }
 }

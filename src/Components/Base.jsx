@@ -1,4 +1,4 @@
-import { Box, Button, ButtonGroup, Grid } from '@mui/material'
+import { Box, Button, ButtonGroup, Grid, Tooltip, Typography } from '@mui/material'
 import React, { useState } from 'react'
 import { useEffect } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
@@ -8,23 +8,49 @@ import './Base.css'
 import Home from './Home'
 import Techie from './Techie'
 import HomeIcon from '@mui/icons-material/Home';
+import ContactMailIcon from '@mui/icons-material/ContactMail';
+import Contact from './Contact'
+import ReactJs from '../images/ReactJs.png'
+import MaterialUi from '../images/MaterialUi.png'
+import EmailJs from '../images/EmailJs.png'
+import Firebase from '../images/Firebase.png'
+import EmojiEmotionsIcon from '@mui/icons-material/EmojiEmotions';
+import Zoom from '@mui/material/Zoom';
 
 const Base = () => {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
   const [page, setPage] = useState('home');
+  const [fromTopMenu, setFromTopMenu] = useState(false);
   const defaultStyle = {
-    fontWeight: 'bolder', color: 'white',
-    borderColor: 'white'
+    fontWeight: 'bolder', color: 'cyan',
+    borderColor: '#2e2d5d'
   };
+
   const clickStyle = {
-    backgroundColor: 'white', borderColor: 'white',
+    backgroundColor: 'cyan', borderColor: '#2e2d5d',
     color: '#1B1F3B', fontWeight: 'bolder'
   };
 
-  const choosePage = (value) => {
+  const topMenuDefaultStyle = {
+    fontWeight: 'bold',
+    borderColor: '#2e2d5d',
+    color: 'cyan',
+  };
+  const topMenuClickStyle = {
+    backgroundColor: 'cyan', borderColor: 'cyan',
+    fontWeight: 'bold',
+    color: '#1B1F3B',
+  };
+
+  const choosePage = (value, isTop = false, contactThread = '') => {
     setPage(value);
-    navigate('/?access=' + value + "&qs=site_2AKSJEWIXCMNCWKLCSKPOQSKLAKOUFH");
+    value !== 'home' ? setFromTopMenu(isTop) : setFromTopMenu(false);
+    let navigateString = '/?access=' + value + "&qs=site_2AKSJEWIXCMNCWKLCSKPOQSKLAKOUFH";
+    if (contactThread !== '') {
+      navigateString = navigateString + '&ct=' + contactThread;
+    }
+    navigate(navigateString);
   }
 
   useEffect(() => {
@@ -37,24 +63,88 @@ const Base = () => {
 
   return (
     <div>
+      <div className='topMenu'>
+        <ButtonGroup size='small' variant='outlined' style={{ marginLeft: '-30px' }}>
+          <Button
+            variant='outlined'
+            style={page === 'home' ? topMenuClickStyle : topMenuDefaultStyle}
+            onClick={() => choosePage('home', true)}
+          >
+            <HomeIcon />
+          </Button>
+          <Button
+            variant='outlined'
+            style={page === 'artist-profile' ? topMenuClickStyle : topMenuDefaultStyle}
+            onClick={() => choosePage('artist-profile', true)}
+          >ARTIST PROFILE</Button>
+          <Button
+            variant='outlined'
+            style={page === 'tech-profile' ? topMenuClickStyle : topMenuDefaultStyle}
+            onClick={() => choosePage('tech-profile', true)}
+          >TECH PROFILE</Button>
+          <Button
+            variant='outlined'
+            style={page === 'contact' ? topMenuClickStyle : topMenuDefaultStyle}
+            onClick={() => choosePage('contact', true)}
+          >
+            <ContactMailIcon />
+          </Button>
+        </ButtonGroup>
+      </div>
+      {window.innerWidth <= 900 ? <br /> : ""}
       <Box sx={{ display: 'flex', flexGrow: 1 }}>
-        <Grid container spacing={2} className='base' style={{display:'flow-root'}}>
-          <Grid item xs={3} style={{ textAlign: 'center', float: 'left' }}>
-            <img src={img1} alt="MSM" className='imageSet' />
-            <p style={{ paddingTop: '5px', height: '60px', textAlign: 'left', paddingLeft: '70px' }}>
-              <code style={{ fontSize: 25, color: 'skyblue' }}>
-                Hey, I'm<br />
-              </code>
-              <code style={{ fontSize: 60, color: 'yellow' }}>
-                Midhun S Madhavan, <br />
-              </code>
-              {/* color: '#3755BE', */}
-              <code style={{ fontSize: 20, color: 'lightblue' }}>
-                an artist and a software engineer.
-              </code>
-            </p>
+        <Grid container spacing={2} className='base'>
+          <Grid item sm={window.innerWidth <= 900 ? 12 : 3} xs={12} className='leftPan'>
+            {fromTopMenu ?
+              <Grid container spacing={2}>
+                <Grid item xs={6} style={{ textAlign: 'right' }}>
+                  <img src={img1} alt="MSM" className='imageSetSmall' />
+                </Grid>
+                <Grid item xs={6} style={{ textAlign: 'left' }}>
+                  <p className='smalldescription'>
+                    <code className='name'>
+                      Midhun<br />Soudamini<br />Madhavan <br />
+                    </code>
+                    <code className='firstLine' style={{
+                      background: 'ivory',
+                      padding: '0.5px 5px',
+                      color: '#1B1F3B',
+                    }}>
+                      {(() => {
+                        switch (page) {
+                          case 'artist-profile':
+                            return "The Artist";
+                          case 'tech-profile':
+                            return "The Techie";
+                          case 'contact':
+                            return "Contact me";
+                          default:
+                            return "";
+                        }
+                      })()}
+                    </code>
+                  </p>
+                </Grid>
+              </Grid>
+              :
+              <>
+                <img src={img1} alt="MSM" className='imageSet' />
+                <p className='description'>
+                  <code className='firstLine'>
+                    Hey, I'm<br />
+                  </code>
+                  <code className='name'>
+                    Midhun<br />Soudamini<br />Madhavan <br />
+                  </code>
+                  <code className='brief'>
+                    an artist and a software engineer.
+                  </code>
+                </p>
+              </>
+            }
           </Grid>
-          <Grid item xs={9} style={{ float: 'left' }}>
+          <div className='splitter'></div>
+          <Grid item sm={window.innerWidth <= 900 ? 12 : 9} xs={12}>
             <div className='pages'>
               <ButtonGroup size='large' variant='outlined'>
                 <Button
@@ -78,6 +168,13 @@ const Base = () => {
                 >
                   TECH PROFILE
                 </Button>
+                <Button
+                  variant='outlined'
+                  style={page === 'contact' ? clickStyle : defaultStyle}
+                  onClick={() => choosePage('contact')}
+                >
+                  <ContactMailIcon />
+                </Button>
               </ButtonGroup>
             </div>
             {(() => {
@@ -85,9 +182,11 @@ const Base = () => {
                 case 'home':
                   return <Home />;
                 case 'artist-profile':
-                  return <Artist />;
+                  return <Artist choosePage={choosePage} />;
                 case 'tech-profile':
-                  return <Techie />;
+                  return <Techie choosePage={choosePage} />;
+                case 'contact':
+                  return <Contact />;
                 default:
                   return <Home />;
               }
@@ -95,18 +194,40 @@ const Base = () => {
           </Grid>
         </Grid>
       </Box>
+      <div className='bottom-Filler'></div>
       <div className='bottom-wrapper'>
-        {/* <a href="https://www.instagram.com/iammadhavan_m/" target='blank' className='AppLink'>
-          <img src={IG} alt="Instagram" style={{ width: 25, height: 20 }} />
-        </a>
-        <a href="mailto:arts.midhunsmadhavan@gmail.com" className='AppLink'>
-          <img src={email} alt="Email" style={{ width: 20, height: 20 }} />
-        </a>
-        <br />*/}
-        &#169;&nbsp;Midhun S Madhavan,&nbsp;
-        2023
+        <Typography variant={window.innerWidth <= 900 ? 'body1' : 'h6'}>Crafted using</Typography>
+        <div>
+          <Tooltip title="React Js" TransitionComponent={Zoom} placement="top" arrow>
+            <img src={ReactJs} alt='React.Js' style={{
+              height: window.innerWidth <= 900 ? '20px' : '30px', width: window.innerWidth <= 900 ? '20px' : '30px',
+              display: 'inline-block', margin: '10px', borderRadius: '2px'
+            }} /></Tooltip>
+          <Tooltip title="Material  UI" TransitionComponent={Zoom} placement="top" arrow>
+            <img src={MaterialUi} alt='Material Ui' style={{
+              height: window.innerWidth <= 900 ? '20px' : '30px', width: window.innerWidth <= 900 ? '20px' : '30px',
+              display: 'inline-block', margin: '10px', borderRadius: '2px'
+            }} /></Tooltip>
+          <Tooltip title="Email Js" TransitionComponent={Zoom} placement="top" arrow>
+            <img src={EmailJs} alt='EmailJs' style={{
+              height: window.innerWidth <= 900 ? '20px' : '30px', width: window.innerWidth <= 900 ? '20px' : '30px',
+              display: 'inline-block', margin: '10px', borderRadius: '2px'
+            }} /></Tooltip>
+          <Tooltip title="Firebase" TransitionComponent={Zoom} placement="top" arrow>
+            <img src={Firebase} alt='Firebase' style={{
+              height: window.innerWidth <= 900 ? '20px' : '30px', width: window.innerWidth <= 900 ? '20px' : '30px',
+              display: 'inline-block', margin: '10px', borderRadius: '2px'
+            }} />
+          </Tooltip>
+        </div>
+        <div>
+          (and by myself.)<br /><br />
+          <EmojiEmotionsIcon style={{ color: 'gold' }} /><br /><br />
+          &#169;&nbsp;Midhun S Madhavan,&nbsp;
+          2023
+        </div>
       </div>
-    </div>
+    </div >
   )
 }
 
