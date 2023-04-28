@@ -1,13 +1,16 @@
-import { Box, Button, ButtonGroup, Grid, Tooltip, Typography } from '@mui/material'
+import { AppBar, Box, Grid, Toolbar, Tooltip, Typography, Button, ButtonGroup, Drawer, Divider } from '@mui/material'
+// 
 import React, { useState } from 'react'
 import { useEffect } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
-import img1 from '../images/litupface.png'
+// import logo from '../images/vanghogh-back.png'
 import Artist from './Artist'
 import './Base.css'
 import Home from './Home'
 import Techie from './Techie'
 import HomeIcon from '@mui/icons-material/Home';
+// import TheaterComedyIcon from '@mui/icons-material/TheaterComedy';
+// import EngineeringIcon from '@mui/icons-material/Engineering';
 import ContactMailIcon from '@mui/icons-material/ContactMail';
 import Contact from './Contact'
 import ReactJs from '../images/ReactJs.png'
@@ -16,41 +19,51 @@ import EmailJs from '../images/EmailJs.png'
 import Firebase from '../images/Firebase.png'
 import EmojiEmotionsIcon from '@mui/icons-material/EmojiEmotions';
 import Zoom from '@mui/material/Zoom';
+import IconButton from '@mui/material/IconButton';
+import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
+
 
 const Base = () => {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
   const [page, setPage] = useState('home');
-  const [fromTopMenu, setFromTopMenu] = useState(false);
-  const defaultStyle = {
-    fontWeight: 'bolder', color: 'cyan',
-    borderColor: '#2e2d5d'
-  };
+  const [drawerState, setDrawerState] = useState(false);
+  // const [fromTopMenu, setFromTopMenu] = useState(false);
+  // const defaultStyle = {
+  //   fontWeight: 'bolder', color: 'cyan',
+  //   borderColor: '#2e2d5d'
+  // };
 
-  const clickStyle = {
-    backgroundColor: 'cyan', borderColor: '#2e2d5d',
-    color: '#1B1F3B', fontWeight: 'bolder'
-  };
+  // const clickStyle = {
+  //   backgroundColor: 'cyan', borderColor: '#2e2d5d',
+  //   color: '#1B1F3B', fontWeight: 'bolder'
+  // };
 
-  const topMenuDefaultStyle = {
-    fontWeight: 'bold',
-    borderColor: '#2e2d5d',
-    color: 'cyan',
-  };
-  const topMenuClickStyle = {
-    backgroundColor: 'cyan', borderColor: 'cyan',
-    fontWeight: 'bold',
-    color: '#1B1F3B',
+  // const topMenuDefaultStyle = {
+  //   fontWeight: 'bold',
+  //   borderColor: '#2e2d5d',
+  //   color: 'cyan',
+  // };
+  // const topMenuClickStyle = {
+  //   backgroundColor: 'cyan', borderColor: 'cyan',
+  //   fontWeight: 'bold',
+  //   color: '#1B1F3B',
+  // };
+
+  const toggleDrawer = (open) => {
+    setDrawerState(open);
   };
 
   const choosePage = (value, isTop = false, contactThread = '') => {
     setPage(value);
-    value !== 'home' ? setFromTopMenu(isTop) : setFromTopMenu(false);
+    // value !== 'home' ? setFromTopMenu(isTop) : setFromTopMenu(false);
     let navigateString = '/?access=' + value + "&qs=site_2AKSJEWIXCMNCWKLCSKPOQSKLAKOUFH";
     if (contactThread !== '') {
       navigateString = navigateString + '&ct=' + contactThread;
     }
     navigate(navigateString);
+    setDrawerState(false);
   }
 
   useEffect(() => {
@@ -63,138 +76,157 @@ const Base = () => {
 
   return (
     <div>
-      <div className='topMenu'>
-        <ButtonGroup size='small' variant='outlined' style={{ marginLeft: '-30px' }}>
-          <Button
-            variant='outlined'
-            style={page === 'home' ? topMenuClickStyle : topMenuDefaultStyle}
-            onClick={() => choosePage('home', true)}
-          >
-            <HomeIcon />
-          </Button>
-          <Button
-            variant='outlined'
-            style={page === 'artist-profile' ? topMenuClickStyle : topMenuDefaultStyle}
-            onClick={() => choosePage('artist-profile', true)}
-          >ARTIST PROFILE</Button>
-          <Button
-            variant='outlined'
-            style={page === 'tech-profile' ? topMenuClickStyle : topMenuDefaultStyle}
-            onClick={() => choosePage('tech-profile', true)}
-          >TECH PROFILE</Button>
-          <Button
-            variant='outlined'
-            style={page === 'contact' ? topMenuClickStyle : topMenuDefaultStyle}
-            onClick={() => choosePage('contact', true)}
-          >
-            <ContactMailIcon />
-          </Button>
-        </ButtonGroup>
-      </div>
-      {window.innerWidth <= 900 ? <br /> : ""}
       <Box sx={{ display: 'flex', flexGrow: 1 }}>
         <Grid container spacing={2} className='base'>
-          <Grid item sm={window.innerWidth <= 900 ? 12 : 3} xs={12} className='leftPan'>
-            {fromTopMenu ?
-              <Grid container spacing={2}>
-                <Grid item xs={6} style={{ textAlign: 'right' }}>
-                  <img src={img1} alt="MSM" className='imageSetSmall' />
-                </Grid>
-                <Grid item xs={6} style={{ textAlign: 'left' }}>
-                  <p className='smalldescription'>
-                    <code className='name'>
-                      Midhun<br />Soudamini<br />Madhavan <br />
-                    </code>
-                    <code className='firstLine' style={{
-                      background: 'ivory',
-                      padding: '0.5px 5px',
-                      color: '#1B1F3B',
-                    }}>
-                      {(() => {
-                        switch (page) {
-                          case 'artist-profile':
-                            return "The Artist";
-                          case 'tech-profile':
-                            return "The Techie";
-                          case 'contact':
-                            return "Contact me";
-                          default:
-                            return "";
-                        }
-                      })()}
-                    </code>
-                  </p>
-                </Grid>
-              </Grid>
-              :
-              <>
-                <img src={img1} alt="MSM" className='imageSet' />
-                <p className='description'>
-                  <code className='firstLine'>
-                    Hey, I'm<br />
-                  </code>
-                  <code className='name'>
-                    Midhun<br />Soudamini<br />Madhavan <br />
-                  </code>
-                  <code className='brief'>
-                    an artist and a software engineer.
-                  </code>
-                </p>
-              </>
-            }
-          </Grid>
-          <div className='splitter'></div>
-          <Grid item sm={window.innerWidth <= 900 ? 12 : 9} xs={12}>
-            <div className='pages'>
-              <ButtonGroup size='large' variant='outlined'>
-                <Button
-                  variant='outlined'
-                  style={page === 'home' ? clickStyle : defaultStyle}
-                  onClick={() => choosePage('home')}
+          <Grid item sm={12} xs={12}>
+            <Grid item sm={10} xs={12} style={{ margin: 'auto' }}>
+              <AppBar elevation={0} style={{ backgroundColor: 'whitesmoke' }} position='fixed'>
+                <Box sx={{ display: 'flex', flexGrow: 1 }}>
+                  <Grid container spacing={0} className='base'>
+                    <Grid item sm={12} xs={12}>
+                      <Grid item sm={10} xs={12} style={{ margin: 'auto', padding: '0px' }}>
+                        <Toolbar style={{ paddingRight: '0px' }}>
+                          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}
+                            style={{
+                              color: 'black',
+                              // fontStyle: 'italic',
+                              fontFamily: 'Arial,Helvetica,sans-serif',
+                              textShadow: '5px 0 5px silver',
+                            }}>
+                            Midhun S Madhavan
+                          </Typography>
+                          {window.innerWidth <= 900 ?
+                            <IconButton
+                              size="large"
+                              edge="start"
+                              color="inherit"
+                              aria-label="menu"
+                              sx={{ mr: 2 }}
+                              onClick={() => toggleDrawer(true)}
+                            >
+                              <MenuIcon style={{ color: 'black' }} />
+                            </IconButton>
+                            :
+                            <ButtonGroup size='large'>
+                              <Button
+                                variant='text'
+                                // style={page === 'home' ? clickStyle : defaultStyle}
+                                onClick={() => choosePage('home')}
+                              >
+                                <HomeIcon />
+                              </Button>
+                              <Button
+                                variant='text'
+                                // style={page === 'artist-profile' ? clickStyle : defaultStyle}
+                                onClick={() => choosePage('artist-profile')}
+                              >
+                                ARTIST PROFILE
+                              </Button>
+                              <Button
+                                variant='text'
+                                // style={page === 'tech-profile' ? clickStyle : defaultStyle}
+                                onClick={() => choosePage('tech-profile')}
+                              >
+                                TECH PROFILE
+                              </Button>
+                              <Button
+                                variant='text'
+                                // style={page === 'contact' ? clickStyle : defaultStyle}
+                                onClick={() => choosePage('contact')}
+                              >
+                                <ContactMailIcon />
+                              </Button>
+                            </ButtonGroup>
+                          }
+                        </Toolbar>
+                      </Grid>
+                    </Grid>
+                  </Grid>
+                </Box>
+              </AppBar>
+              <Drawer anchor='top' open={drawerState}
+                onClose={() => toggleDrawer(false)}>
+                <Box
+                  sx={{
+                    width: window.innerWidth, height: window.innerHeight,
+                    backgroundColor: 'aliceblue'
+                  }}
+                  role="presentation"
                 >
-                  <HomeIcon />
-                </Button>
-                <Button
-                  variant='outlined'
-                  style={page === 'artist-profile' ? clickStyle : defaultStyle}
-                  onClick={() => choosePage('artist-profile')}
-                >
-                  ARTIST PROFILE
-                </Button>
-                <Button
-                  variant='outlined'
-                  style={page === 'tech-profile' ? clickStyle : defaultStyle}
-                  onClick={() => choosePage('tech-profile')}
-                >
-                  TECH PROFILE
-                </Button>
-                <Button
-                  variant='outlined'
-                  style={page === 'contact' ? clickStyle : defaultStyle}
-                  onClick={() => choosePage('contact')}
-                >
-                  <ContactMailIcon />
-                </Button>
-              </ButtonGroup>
-            </div>
-            {(() => {
-              switch (page) {
-                case 'home':
-                  return <Home />;
-                case 'artist-profile':
-                  return <Artist choosePage={choosePage} />;
-                case 'tech-profile':
-                  return <Techie choosePage={choosePage} />;
-                case 'contact':
-                  return <Contact />;
-                default:
-                  return <Home />;
-              }
-            })()}
+                  <div style={{ width: '100%', height: '35%' }}></div>
+                  <Divider />
+                  <Button
+                    variant='text'
+                    // style={page === 'home' ? clickStyle : defaultStyle}
+                    style={{ width: '100%', color: 'black' }}
+                    onClick={() => choosePage('home')}
+                  >
+                    {/* <HomeIcon />&nbsp; */}
+                    Home
+                  </Button> <br />
+                  <Button
+                    variant='text'
+                    // style={page === 'artist-profile' ? clickStyle : defaultStyle}
+                    style={{ width: '100%', color: 'black' }}
+                    onClick={() => choosePage('artist-profile')}
+                  >
+                    {/* <TheaterComedyIcon />&nbsp; */}
+                    ARTIST PROFILE
+                  </Button> <br />
+                  <Button
+                    variant='text'
+                    // style={page === 'tech-profile' ? clickStyle : defaultStyle}
+                    style={{ width: '100%', color: 'black' }}
+                    onClick={() => choosePage('tech-profile')}
+                  >
+                    {/* <EngineeringIcon />&nbsp; */}
+                    TECH PROFILE
+                  </Button> <br />
+                  <Button
+                    variant='text'
+                    // style={page === 'contact' ? clickStyle : defaultStyle}
+                    style={{ width: '100%', color: 'black' }}
+                    onClick={() => choosePage('contact')}
+                  >
+                    {/* <ContactMailIcon />&nbsp; */}
+                    Contact
+                  </Button>
+                  <Divider />
+                  {/* </div> */}
+                  <div style={{ width: '100%', textAlign: 'center', padding: '15px', paddingLeft: '15px' }}>
+                    <IconButton
+                      size="medium"
+                      edge="start"
+                      color="inherit"
+                      aria-label="menu"
+                      sx={{ mr: 2, border: '1px solid silver' }}
+                      onClick={() => toggleDrawer(false)}
+                    >
+                      <CloseIcon style={{ color: 'black', fontWeight: 'bold' }} />
+                    </IconButton>
+                  </div>
+                </Box>
+              </Drawer>
+              <div style={{ height: window.innerWidth <= 900 ? '50px' : '80px' }}></div>
+              {(() => {
+                switch (page) {
+                  case 'home':
+                    return <Home />;
+                  case 'artist-profile':
+                    return <Artist choosePage={choosePage} />;
+                  case 'tech-profile':
+                    return <Techie choosePage={choosePage} />;
+                  case 'contact':
+                    return <Contact />;
+                  default:
+                    return <Home />;
+                }
+              })()}
+            </Grid>
           </Grid>
         </Grid>
       </Box>
-      <div className='bottom-Filler'></div>
+      {/* <div className='bottom-Filler'></div> */}
       <div className='bottom-wrapper'>
         <Typography variant={window.innerWidth <= 900 ? 'body1' : 'h6'}>Crafted using</Typography>
         <div>
@@ -227,7 +259,7 @@ const Base = () => {
           2023
         </div>
       </div>
-    </div >
+    </div>
   )
 }
 

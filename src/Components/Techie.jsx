@@ -15,15 +15,19 @@ import LaunchIcon from '@mui/icons-material/Launch';
 
 const Techie = ({ choosePage }) => {
     return (
-        <div className='content' style={{ display: 'flow-root', padding: window.innerWidth <= 900 ? '10px' : '20px', paddingTop: '10px', paddingBottom: '10px' }}>
+        <div className='content' style={{ display: 'flow-root', paddingBottom: '20px' }}>
+            <Typography variant='h1' className='border-content'>
+                Senior<br />Software<br />Engineer
+            </Typography>
+            {/* // , padding: window.innerWidth <= 900 ? '10px' : '20px', paddingTop: '10px', paddingBottom: '10px' }}> */}
             <div style={{ width: '100%', display: 'block' }}>
-                <Typography variant='h1' className='oneLine1'>
-                    Software Engineer
-                </Typography>
-                <Typography variant='overline' className='oneLine1' style={{
+                {/* <Typography variant='h1' className='border-content'>
+                    Senior<br />Software<br />Engineer
+                </Typography> */}
+                <Typography variant='overline' style={{
                     display: 'block',
-                    paddingBottom: window.innerWidth <= 900 ? '0px' : '30px',
-                    paddingLeft: '10px'
+                    // paddingBottom: window.innerWidth <= 900 ? '0px' : '0px',
+                    paddingLeft: window.innerWidth <= 900 ? '15px' : '10px'
                 }}>
                     Experience in designing and developing software for business solutions.
                 </Typography>
@@ -33,31 +37,40 @@ const Techie = ({ choosePage }) => {
                 <Grid container spacing={2}>
                     <Grid item sm={12} xs={12}>
                         <Paper variant='elevation' style={{
-                            backgroundColor: '#04032a',
+                            // backgroundColor: '#04032a',
                             padding: '20px', color: 'whitesmoke', marginBottom: '20px',
                             width: window.innerWidth <= 900 ? '83%' : 'auto',
+                            // borderRadius: window.innerWidth <= 900 ? '0px' : '10px',
+                            margin: 'auto'
                         }}>
                             <Typography variant={window.innerWidth <= 900 ? 'body1' : 'h6'}
-                                style={{ paddingBottom: '10px' }}>
+                                style={{
+                                    paddingBottom: '10px', color: '#04032a',
+                                    textAlign: window.innerWidth <= 900 ? 'left' : 'justify'
+                                }}>
                                 Over a decade of experience in designing and developing software solutions using Microsoft technology stack and other open-source technologies, mostly for transportation and logistics vertical. Experienced in working with various feature areas of .NET, .NET Core, MVC, WebAPI, JavaScript and Angular/React.js/React-Native.
                             </Typography>
                         </Paper>
                     </Grid>
                 </Grid>
             </Box>
-            <Typography variant='h3' style={{ paddingBottom: '20px', color: 'silver' }}>
+            <br />
+            <Typography variant='h3' style={{ padding: '10px', paddingBottom: '0px' }}>
+                {/* , color: 'silver' */}
                 <ConstructionIcon fontSize='large' />&nbsp;Tech Stack
             </Typography>
             <Box sx={{ display: 'flex', flexGrow: 1 }}>
                 <Grid container spacing={2}>
                     <Grid item sm={12} xs={12}>
                         <Paper variant='elevation' style={{
-                            backgroundColor: '#04032a',
+                            // backgroundColor: '#04032a',
                             padding: '20px', color: 'whitesmoke', marginBottom: '20px',
                             width: window.innerWidth <= 900 ? '83%' : 'auto',
+                            // borderRadius: window.innerWidth <= 900 ? '0px' : '10px',
+                            margin: 'auto'
                         }}>
                             {/* <Stack direction="row" spacing={1}> */}
-                            <Box sx={{ display: 'flex', flexGrow: 1 }}>
+                            <Box sx={{ display: 'flex', flexGrow: 1, color: '#04032a' }}>
                                 <Grid container spacing={2}>
                                     <Grid item sm={6} xs={12}>
                                         <Typography className='chip'>
@@ -150,7 +163,8 @@ const Techie = ({ choosePage }) => {
                     </Grid>
                 </Grid>
             </Box>
-            <Typography variant='h3' style={{ paddingBottom: '20px', color: 'silver' }}>
+            <Typography variant='h3' style={{ padding: '10px', paddingBottom: '10px' }}>
+                {/* , color: 'silver' */}
                 <WorkHistoryTwoToneIcon fontSize='large' />&nbsp;Career History
             </Typography>
             <Box sx={{ display: 'flex', flexGrow: 1 }}>
@@ -159,6 +173,7 @@ const Techie = ({ choosePage }) => {
                         <Paper variant='elevation' className='company' style={{
                             minHeight: window.innerWidth <= 900 ? 'auto' : '420px',
                             width: window.innerWidth <= 900 ? '83%' : 'auto',
+                            margin: 'auto'
                         }}>
                             {window.innerWidth <= 900 ?
                                 <Grid container spacing={2}>
@@ -247,6 +262,7 @@ const Techie = ({ choosePage }) => {
                         <Paper variant='elevation' className='company' style={{
                             minHeight: window.innerWidth <= 900 ? 'auto' : '420px',
                             width: window.innerWidth <= 900 ? '83%' : 'auto',
+                            margin: 'auto'
                         }}>
                             {window.innerWidth <= 900 ?
                                 <Grid container spacing={2}>
@@ -317,6 +333,7 @@ const Techie = ({ choosePage }) => {
                         <Paper variant='elevation' className='company' style={{
                             minHeight: window.innerWidth <= 900 ? 'auto' : '420px',
                             width: window.innerWidth <= 900 ? '83%' : 'auto',
+                            margin: 'auto'
                         }}>
                             {window.innerWidth <= 900 ?
                                 <Grid container spacing={2}>
@@ -387,11 +404,12 @@ const Techie = ({ choosePage }) => {
                         <Paper variant='elevation' className='company' style={{
                             minHeight: window.innerWidth <= 900 ? 'auto' : '420px',
                             width: window.innerWidth <= 900 ? '83%' : 'auto',
+                            margin: 'auto'
                         }}>
                             <Grid container spacing={2}>
                                 <Grid item sm={6} xs={12}>
                                     <Typography variant='h5' style={{ color: '#3F599E', fontWeight: 'bolder' }}>
-                                        F6 ANIMATIONS&nbsp;&nbsp;<LaunchIcon style={{cursor: 'pointer'}}/>
+                                        F6 ANIMATIONS&nbsp;&nbsp;<LaunchIcon style={{ cursor: 'pointer' }} />
                                     </Typography>
                                     <Typography variant='body2' style={{ color: '#3F599E', fontWeight: 'bolder' }}>
                                         Ernakulam, Kerala.
@@ -451,11 +469,12 @@ const Techie = ({ choosePage }) => {
                         <Paper variant='elevation' className='company' style={{
                             minHeight: window.innerWidth <= 900 ? 'auto' : '425px',
                             width: window.innerWidth <= 900 ? '83%' : 'auto',
+                            margin: 'auto'
                         }}>
                             {window.innerWidth <= 900 ?
                                 <Grid container spacing={2}>
                                     <Grid item sm={12} xs={12}>
-                                        <img src={IsletLogo} alt='Islet' />
+                                        <img src={IsletLogo} alt='Islet' style={{ background: 'black', padding: '10px', borderRadius: '10px' }} />
                                         <Typography variant='h5' style={{ color: '#3F599E', fontWeight: 'bolder' }}>
                                             ISLET SYSTEMS&nbsp;&nbsp;<a href='https://www.isletsystems.com/' target='_blank' rel='noreferrer'><LaunchIcon /></a>
                                         </Typography>
@@ -479,7 +498,7 @@ const Techie = ({ choosePage }) => {
                                         <Typography variant='body2' style={{ fontWeight: 'bold', color: '#4460AA' }}>Sr. SOFTWARE ENGINEER</Typography>
                                     </Grid>
                                     <Grid item sm={6} xs={12}>
-                                        <img src={IsletLogo} alt='Islet' style={{ marginTop: window.innerWidth <= 900 ? '0px' : '-5px', float: 'right' }} />
+                                        <img src={IsletLogo} alt='Islet' style={{ marginTop: window.innerWidth <= 900 ? '0px' : '-5px', float: 'right', backgroundColor: 'black', padding: '10px', borderRadius: '10px' }} />
                                     </Grid>
                                 </Grid>
                             }
@@ -521,11 +540,12 @@ const Techie = ({ choosePage }) => {
                         <Paper variant='elevation' className='company' style={{
                             minHeight: window.innerWidth <= 900 ? 'auto' : '420px',
                             width: window.innerWidth <= 900 ? '83%' : 'auto',
+                            margin: 'auto'
                         }}>
                             {window.innerWidth <= 900 ?
                                 <Grid container spacing={2}>
                                     <Grid item sm={12} xs={12}>
-                                        <img src={IsletLogo} alt='Islet' />
+                                        <img src={IsletLogo} alt='Islet' style={{ backgroundColor: 'black', padding: '10px', borderRadius: '10px' }} />
                                         <Typography variant='h5' style={{ color: '#3F599E', fontWeight: 'bolder' }}>
                                             ISLET SYSTEMS&nbsp;&nbsp;<a href='https://www.isletsystems.com/' target='_blank' rel='noreferrer'><LaunchIcon /></a>
                                         </Typography>
@@ -549,7 +569,7 @@ const Techie = ({ choosePage }) => {
                                         <Typography variant='body2' style={{ fontWeight: 'bold', color: '#4460AA' }}>Sr. SOFTWARE ENGINEER</Typography>
                                     </Grid>
                                     <Grid item sm={6} xs={12}>
-                                        <img src={IsletLogo} alt='Islet' style={{ marginTop: window.innerWidth <= 900 ? '0px' : '-5px', float: 'right' }} />
+                                        <img src={IsletLogo} alt='Islet' style={{ marginTop: window.innerWidth <= 900 ? '0px' : '-5px', float: 'right', backgroundColor: 'black', padding: '10px', borderRadius: '10px' }} />
                                     </Grid>
                                 </Grid>
                             }
@@ -608,6 +628,7 @@ const Techie = ({ choosePage }) => {
                         <Paper variant='elevation' className='company' style={{
                             minHeight: window.innerWidth <= 900 ? 'auto' : '420px',
                             width: window.innerWidth <= 900 ? '83%' : 'auto',
+                            margin: 'auto'
                         }}>
                             {window.innerWidth <= 900 ?
                                 <Grid container spacing={2}>
@@ -678,15 +699,16 @@ const Techie = ({ choosePage }) => {
                         <Paper variant='elevation' className='company' style={{
                             minHeight: window.innerWidth <= 900 ? 'auto' : '420px',
                             width: window.innerWidth <= 900 ? '83%' : 'auto',
-                            textAlign: 'left'
+                            textAlign: 'left',
+                            margin: 'auto'
                         }}>
                             <div style={{ width: '100%', height: '100%', marginLeft: 0, marginRight: 0 }}>
-                                <EngineeringIcon style={{ fontSize: '110px' }} />
-                                <Typography variant='h4' style={{ fontWeight: 'bold' }}>
+                                <EngineeringIcon style={{ fontSize: '100px' }} />
+                                <Typography variant='h5'>
                                     Are you looking to expand your technology team? <br />
                                     Are you looking for someone to build your software or website?<br /><br />
                                     <Button variant='outlined'
-                                        style={{ color: 'gold', borderColor: 'gold', float: 'right', bottom: '0px' }}
+                                        style={{ color: 'blue', borderColor: 'blue', float: 'right', bottom: '0px' }}
                                         onClick={() => choosePage('contact',
                                             window.innerWidth <= 900 ? true : false,
                                             'techrequest')}>LET'S TALK&nbsp;&nbsp;<NearMeIcon /></Button>
