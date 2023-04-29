@@ -72,20 +72,18 @@ const Artist = ({ choosePage }) => {
                 {/* style={{ color: 'cyan' }} */}
                 Actor,<br /> Screenwriter,<br /> Lyricist, Director.
             </Typography>
-            <Paper elevation={0} style={{
-                // backgroundColor: '#04032a',
+            <Paper elevation={1} style={{
                 padding: '20px',
                 width: window.innerWidth <= 900 ? '83%' : 'auto',
-                // borderRadius: window.innerWidth <= 900 ? '0px' : '10px',
                 margin: 'auto',
             }}>
                 <List
-                    sx={{ width: window.innerWidth <= 900 ? '100%' : '100%' }}
+                    sx={{ width: '100%' }}
                     aria-label="notes"
                 >
                     <ListItem disablePadding>
                         <ListItemIcon className='listIconArtist'>
-                            <StarIcon style={{ color: '#1B1F3B' }} />
+                            <StarIcon style={{ color: 'gold' }} />
                         </ListItemIcon>
                         <ListItemText className='listTextArtist'>
                             <Typography variant='body1'>
@@ -95,7 +93,7 @@ const Artist = ({ choosePage }) => {
                     </ListItem>
                     <ListItem disablePadding>
                         <ListItemIcon className='listIconArtist'>
-                            <StarIcon style={{ color: '#1B1F3B' }} />
+                            <StarIcon style={{ color: 'gold' }} />
                         </ListItemIcon>
                         <ListItemText className='listTextArtist'>
                             <Typography variant='body1'>
@@ -105,7 +103,7 @@ const Artist = ({ choosePage }) => {
                     </ListItem>
                     <ListItem disablePadding>
                         <ListItemIcon className='listIconArtist'>
-                            <StarIcon style={{ color: '#1B1F3B' }} />
+                            <StarIcon style={{ color: 'gold' }} />
                         </ListItemIcon>
                         <ListItemText className='listTextArtist'>
                             <Typography variant='body1'>
@@ -115,7 +113,7 @@ const Artist = ({ choosePage }) => {
                     </ListItem>
                     <ListItem disablePadding>
                         <ListItemIcon className='listIconArtist'>
-                            <StarIcon style={{ color: '#1B1F3B' }} />
+                            <StarIcon style={{ color: 'gold' }} />
                         </ListItemIcon>
                         <ListItemText className='listTextArtist'>
                             <Typography variant='body1'>
@@ -125,7 +123,7 @@ const Artist = ({ choosePage }) => {
                     </ListItem>
                     <ListItem disablePadding>
                         <ListItemIcon className='listIconArtist'>
-                            <EmojiEventsIcon style={{ color: '#1B1F3B' }} />
+                            <EmojiEventsIcon style={{ color: 'gold' }} />
                         </ListItemIcon>
                         <ListItemText className='listTextArtist'>
                             <Typography variant='body1'>
@@ -135,7 +133,7 @@ const Artist = ({ choosePage }) => {
                     </ListItem>
                     <ListItem disablePadding>
                         <ListItemIcon className='listIconArtist'>
-                            <TheaterComedyIcon style={{ color: '#1B1F3B' }} />
+                            <TheaterComedyIcon style={{ color: 'gold' }} />
                         </ListItemIcon>
                         <ListItemText className='listTextArtist'>
                             <Typography variant='body1'>
@@ -309,14 +307,7 @@ const Artist = ({ choosePage }) => {
                         <div className='workList' style={{ textAlign: 'center' }}>
                             {
                                 videos.map((value, index) => {
-                                    return <Card elevation={0} sx={{
-                                        // width: window.innerWidth <= 900 ? '95%' : '335px',
-                                        width: window.innerWidth <= 900 ? '95%' : '300px',
-                                        marginRight: window.innerWidth <= 900 ? '0px' : '15px',
-                                        marginBottom: '15px',
-                                        // backgroundColor: '#1B1F3B', 
-                                        color: 'whitesmoke', float: 'left', textAlign: 'left'
-                                    }} key={index}>
+                                    return <Card elevation={1} className='art-card' key={index}>
                                         <CardMedia>
                                             <ReactPlayer url={value.url} pip={true} height={200} width={'100%'} />
                                         </CardMedia>
@@ -332,28 +323,22 @@ const Artist = ({ choosePage }) => {
                                     </Card>
                                 })
                             }
-                            <Card sx={{
-                                width: window.innerWidth <= 900 ? '95%' : '97.3%',
-                                // margin: 'auto',
-                                // marginRight: '15px', 
-                                // marginBottom: '15px',
-                                // backgroundColor: '#1B1F3B',
-                                // color: 'whitesmoke', 
-                                // float: 'left', 
+                            <Card elevation={0} sx={{
+                                width: '95%',
                                 textAlign: 'left',
 
                             }}>
                                 <div style={{ padding: '20px' }}>
-                                    <TheaterComedyIcon style={{ fontSize: '100px' }} />
-                                    <Typography variant='h5'>
+                                    <TheaterComedyIcon style={{ fontSize: '40px' }} />
+                                    <Typography variant='h6'>
                                         Are you in search of an actor?<br />
                                         Are you in need of the lines for your musical?<br />
                                         Are you looking for help in writing the screenplay of your dream project?<br />
                                     </Typography>
                                     <br />
-                                    <Typography variant='h5'>
+                                    <Typography variant='h6'>
                                         <Button variant='outlined'
-                                            style={{ color: 'blue', borderColor: 'blue', float: 'right' }}
+                                            style={{ color: '#1B1F3B', borderColor: '#1B1F3B', float: 'right' }}
                                             onClick={() => choosePage('contact',
                                                 window.innerWidth <= 900 ? true : false,
                                                 'artrequest')}>LET'S TALK&nbsp;&nbsp;<NearMeIcon /></Button>

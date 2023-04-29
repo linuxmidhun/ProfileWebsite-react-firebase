@@ -53,19 +53,19 @@
 }
 
 .imageSet {
-    height               : 250px;
-    width                : 250px;
-    border-radius        : 250px;
-    -webkit-box-shadow   : 0 0 25px 0 white;
-    -moz-box-shadow      : 0 0 25px 0 white;
-    box-shadow           : 0 0 25px 0 white;
-    background-color     : #444;
-    background-color     : rgb(61, 53, 43);
-    background-color     : whitesmoke;
-    background-color     : #2e2d5d;
-    /* background-color  : #06061b; */
-    padding              : 10px;
-    padding-right        : 10px;
+    height            : 400px;
+    width             : 400px;
+    border-radius     : 400px;
+    -webkit-box-shadow: 0 0 10px 0 silver;
+    -moz-box-shadow   : 0 0 10px 0 silver;
+    box-shadow        : 0 0 10px 0 silver;
+    background-color  : #444;
+    background-color  : rgb(61, 53, 43);
+    background-color  : whitesmoke;
+    background-color  : #2e2d5d;
+    background-color  : gold;
+    padding           : 10px;
+    padding-right     : 10px;
 }
 
 .imageSetSmall {
@@ -137,20 +137,15 @@
 }
 
 .bottom-wrapper {
-    bottom                        : 0px;
-    padding                       : 20px;
-    /* padding-bottom             : 10px !important; */
-    text-align                    : center;
-    color                         : rgb(105, 105, 213);
-    font-size                     : 10px;
-    background-color              : #222;
-    -webkit-box-shadow            : 0 5px 35px 0 blueviolet;
-    -moz-box-shadow               : 0 5px 35px 0 blueviolet;
-    box-shadow                    : 0 5px 35px 0 blueviolet;
-    /* background-image           : url("../images/BackFill1.png");
-    background-repeat             : no-repeat;
-    background-size               : cover;
-    background-attachment         : fixed; */
+    bottom                              : 0px;
+    padding                             : 20px;
+    /* padding-bottom                   : 10px !important; */
+    margin-top                          : 20px;
+    text-align                          : center;
+    color                               : rgb(105, 105, 213);
+    font-size                           : 10px;
+    /* background-color                 : gold; */
+    border-top                          : 2px dashed gold;
 }
 
 .bottom-content {
@@ -159,28 +154,38 @@
 }
 
 .border-content {
-    /* margin      : 20px; */
-    /* padding     : 15px; */
-    /* padding-left: 25px; */
     padding-bottom: 15px;
     font-size     : 100px !important;
     text-shadow   : 5px 5px 5px silver;
 }
 
 .border-content-small {
-    /* margin      : 20px; */
-    /* padding     : 15px; */
-    /* padding-left: 25px; */
     padding-bottom: 15px;
     font-size     : 70px !important;
-    text-align    : left;
+    text-align    : center;
     text-shadow   : 5px 5px 5px silver;
 }
 
-.border-content-small .small {
-    font-size  : 35px;
+.border-content-small-home {
+    padding-bottom: 15px;
+    font-size     : 35px !important;
+    text-align    : center;
+    text-shadow   : 5px 5px 5px silver;
+}
+
+.border-content-small-home .small {
+    font-size  : 25px;
     font-family: 'Times New Roman', Times, serif;
     font-style : italic;
+}
+
+.border-content-small-home .sub {
+    font-size  : 20px;
+    font-family: 'Times New Roman', Times, serif;
+    text-shadow: none;
+    width      : 40%;
+    margin     : auto;
+    text-align : justify;
 }
 
 .workList {
@@ -217,24 +222,32 @@
 }
 
 .listIcon {
-    background-color         : #3F599E;
+    /* background-color         : #3F599E;
     background-color         : #657ab6;
+    background-color         : yellow; */
+    color                    : gold;
     padding                  : 5px;
     margin-right             : 10px;
     border-top-left-radius   : 5px;
     border-bottom-left-radius: 5px;
 }
 
+.listIcon svg {
+    color: gold !important;
+}
+
 .listText {
-    background-color  : #2b2972;
-    color             : white;
-    padding           : 10px 25px;
-    margin-left       : -40px;
-    border-radius     : 5px;
-    font-weight       : bold !important;
-    -webkit-box-shadow: inset 10px 0 0 0 #657ab6;
-    -moz-box-shadow   : inset 10px 0 0 0 #657ab6;
-    box-shadow        : inset 10px 0 0 0 #657ab6;
+    /* background-color  : #2b2972;
+    color             : white; */
+    /* background-color  : gold;
+    color             : black; */
+    padding              : 10px 25px;
+    margin-left          : -40px;
+    border-radius        : 5px;
+    font-weight          : bold !important;
+    /* -webkit-box-shadow: inset 10px 0 0 0 #657ab6;
+    -moz-box-shadow      : inset 10px 0 0 0 #657ab6;
+    box-shadow           : inset 10px 0 0 0 #657ab6; */
 }
 
 .listIconArtist {
@@ -268,7 +281,48 @@
     display: block;
 }
 
+.menu-button {
+    display: none !important;
+}
+
+.menu-wide {
+    display: inline;
+}
+
+.art-card {
+    width        : 300px;
+    margin-right : 15px;
+    margin-bottom: 15px;
+    color        : whitesmoke;
+    float        : left;
+    text-align   : left;
+}
+
 @media (max-width: 900px) {
+    .art-card {
+        width       : 95%;
+        margin-right: 0px;
+    }
+
+    .imageSet {
+        height       : 250px;
+        width        : 250px;
+        border-radius: 250px;
+    }
+
+    .menu-button {
+        display: inline !important;
+    }
+
+    .menu-wide {
+        display: none !important;
+    }
+
+    .border-content-small-home .sub {
+        width  : 90%;
+        padding: 10px;
+    }
+
     .leftPan .description {
         text-align  : center !important;
         padding-left: 10px !important;

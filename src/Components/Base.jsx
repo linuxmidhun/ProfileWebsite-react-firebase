@@ -1,4 +1,4 @@
-import { AppBar, Box, Grid, Toolbar, Tooltip, Typography, Button, ButtonGroup, Drawer, Divider } from '@mui/material'
+import { AppBar, Box, Grid, Toolbar, Typography, Button, Drawer, Divider } from '@mui/material'
 // 
 import React, { useState } from 'react'
 import { useEffect } from 'react'
@@ -8,20 +8,24 @@ import Artist from './Artist'
 import './Base.css'
 import Home from './Home'
 import Techie from './Techie'
-import HomeIcon from '@mui/icons-material/Home';
+// import HomeIcon from '@mui/icons-material/Home';
 // import TheaterComedyIcon from '@mui/icons-material/TheaterComedy';
 // import EngineeringIcon from '@mui/icons-material/Engineering';
-import ContactMailIcon from '@mui/icons-material/ContactMail';
+// import ContactMailIcon from '@mui/icons-material/ContactMail';
 import Contact from './Contact'
-import ReactJs from '../images/ReactJs.png'
-import MaterialUi from '../images/MaterialUi.png'
-import EmailJs from '../images/EmailJs.png'
-import Firebase from '../images/Firebase.png'
+// import ReactJs from '../images/ReactJs.png'
+// import MaterialUi from '../images/MaterialUi.png'
+// import EmailJs from '../images/EmailJs.png'
+// import Firebase from '../images/Firebase.png'
 import EmojiEmotionsIcon from '@mui/icons-material/EmojiEmotions';
-import Zoom from '@mui/material/Zoom';
+// import Zoom from '@mui/material/Zoom';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
+import PageWaiter from './PageWaiter'
+import InstagramIcon from '@mui/icons-material/Instagram';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import YouTubeIcon from '@mui/icons-material/YouTube';
 
 
 const Base = () => {
@@ -30,26 +34,30 @@ const Base = () => {
   const [page, setPage] = useState('home');
   const [drawerState, setDrawerState] = useState(false);
   // const [fromTopMenu, setFromTopMenu] = useState(false);
-  // const defaultStyle = {
-  //   fontWeight: 'bolder', color: 'cyan',
-  //   borderColor: '#2e2d5d'
-  // };
+  const defaultStyle = {
+    // fontWeight: 'bolder', 
+    color: 'black',
+    borderColor: '#2e2d5d',
+    margin: '2px',
+    fontFamily: 'source-code-pro, Menlo, Monaco, Consolas, Courier New, monospace',
+  };
 
-  // const clickStyle = {
-  //   backgroundColor: 'cyan', borderColor: '#2e2d5d',
-  //   color: '#1B1F3B', fontWeight: 'bolder'
-  // };
+  const clickStyle = {
+    // backgroundColor: 'cyan',
+    // borderColor: '#2e2d5d',
+    backgroundColor: 'gold',
+    borderColor: 'gold',
+    color: 'black',
+    // fontWeight: 'bolder'
+    fontFamily: 'source-code-pro, Menlo, Monaco, Consolas, Courier New, monospace',
+  };
 
-  // const topMenuDefaultStyle = {
-  //   fontWeight: 'bold',
-  //   borderColor: '#2e2d5d',
-  //   color: 'cyan',
-  // };
-  // const topMenuClickStyle = {
-  //   backgroundColor: 'cyan', borderColor: 'cyan',
-  //   fontWeight: 'bold',
-  //   color: '#1B1F3B',
-  // };
+  const drawerMenuStyle = {
+    width: '100%',
+    color: 'black',
+    fontFamily: 'source-code-pro, Menlo, Monaco, Consolas, Courier New, monospace',
+  }
+
 
   const toggleDrawer = (open) => {
     setDrawerState(open);
@@ -57,7 +65,6 @@ const Base = () => {
 
   const choosePage = (value, isTop = false, contactThread = '') => {
     setPage(value);
-    // value !== 'home' ? setFromTopMenu(isTop) : setFromTopMenu(false);
     let navigateString = '/?access=' + value + "&qs=site_2AKSJEWIXCMNCWKLCSKPOQSKLAKOUFH";
     if (contactThread !== '') {
       navigateString = navigateString + '&ct=' + contactThread;
@@ -80,7 +87,7 @@ const Base = () => {
         <Grid container spacing={2} className='base'>
           <Grid item sm={12} xs={12}>
             <Grid item sm={10} xs={12} style={{ margin: 'auto' }}>
-              <AppBar elevation={0} style={{ backgroundColor: 'whitesmoke' }} position='fixed'>
+              <AppBar elevation={0} style={{ backgroundColor: 'white' }} position='fixed'>
                 <Box sx={{ display: 'flex', flexGrow: 1 }}>
                   <Grid container spacing={0} className='base'>
                     <Grid item sm={12} xs={12}>
@@ -88,56 +95,54 @@ const Base = () => {
                         <Toolbar style={{ paddingRight: '0px' }}>
                           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}
                             style={{
-                              color: 'black',
-                              // fontStyle: 'italic',
-                              fontFamily: 'Arial,Helvetica,sans-serif',
+                              color: '#1B1F3B',
+                              fontFamily: 'source-code-pro, Menlo, Monaco, Consolas, Courier New, monospace',
+                              fontWeight: 'bold',
                               textShadow: '5px 0 5px silver',
                             }}>
                             Midhun S Madhavan
                           </Typography>
-                          {window.innerWidth <= 900 ?
-                            <IconButton
-                              size="large"
-                              edge="start"
-                              color="inherit"
-                              aria-label="menu"
-                              sx={{ mr: 2 }}
-                              onClick={() => toggleDrawer(true)}
+                          <IconButton
+                            size="large"
+                            edge="start"
+                            color="inherit"
+                            aria-label="menu"
+                            sx={{ mr: 2 }}
+                            onClick={() => toggleDrawer(true)}
+                            className='menu-button'
+                          >
+                            <MenuIcon style={{ color: 'black' }} />
+                          </IconButton>
+                          <div className='menu-wide'>
+                            <Button
+                              variant='button'
+                              style={page === 'home' ? clickStyle : defaultStyle}
+                              onClick={() => choosePage('home')}
                             >
-                              <MenuIcon style={{ color: 'black' }} />
-                            </IconButton>
-                            :
-                            <ButtonGroup size='large'>
-                              <Button
-                                variant='text'
-                                // style={page === 'home' ? clickStyle : defaultStyle}
-                                onClick={() => choosePage('home')}
-                              >
-                                <HomeIcon />
-                              </Button>
-                              <Button
-                                variant='text'
-                                // style={page === 'artist-profile' ? clickStyle : defaultStyle}
-                                onClick={() => choosePage('artist-profile')}
-                              >
-                                ARTIST PROFILE
-                              </Button>
-                              <Button
-                                variant='text'
-                                // style={page === 'tech-profile' ? clickStyle : defaultStyle}
-                                onClick={() => choosePage('tech-profile')}
-                              >
-                                TECH PROFILE
-                              </Button>
-                              <Button
-                                variant='text'
-                                // style={page === 'contact' ? clickStyle : defaultStyle}
-                                onClick={() => choosePage('contact')}
-                              >
-                                <ContactMailIcon />
-                              </Button>
-                            </ButtonGroup>
-                          }
+                              Home
+                            </Button>
+                            <Button
+                              variant='button'
+                              style={page === 'artist-profile' ? clickStyle : defaultStyle}
+                              onClick={() => choosePage('artist-profile')}
+                            >
+                              ARTIST
+                            </Button>
+                            <Button
+                              variant='button'
+                              style={page === 'tech-profile' ? clickStyle : defaultStyle}
+                              onClick={() => choosePage('tech-profile')}
+                            >
+                              TECHNOLOGIST
+                            </Button>
+                            <Button
+                              variant='button'
+                              style={page === 'contact' ? clickStyle : defaultStyle}
+                              onClick={() => choosePage('contact')}
+                            >
+                              Contact
+                            </Button>
+                          </div>
                         </Toolbar>
                       </Grid>
                     </Grid>
@@ -157,42 +162,33 @@ const Base = () => {
                   <Divider />
                   <Button
                     variant='text'
-                    // style={page === 'home' ? clickStyle : defaultStyle}
-                    style={{ width: '100%', color: 'black' }}
+                    style={drawerMenuStyle}
                     onClick={() => choosePage('home')}
                   >
-                    {/* <HomeIcon />&nbsp; */}
                     Home
                   </Button> <br />
                   <Button
                     variant='text'
-                    // style={page === 'artist-profile' ? clickStyle : defaultStyle}
-                    style={{ width: '100%', color: 'black' }}
+                    style={drawerMenuStyle}
                     onClick={() => choosePage('artist-profile')}
                   >
-                    {/* <TheaterComedyIcon />&nbsp; */}
-                    ARTIST PROFILE
+                    ARTIST
                   </Button> <br />
                   <Button
                     variant='text'
-                    // style={page === 'tech-profile' ? clickStyle : defaultStyle}
-                    style={{ width: '100%', color: 'black' }}
+                    style={drawerMenuStyle}
                     onClick={() => choosePage('tech-profile')}
                   >
-                    {/* <EngineeringIcon />&nbsp; */}
-                    TECH PROFILE
+                    TECHNOLOGIST
                   </Button> <br />
                   <Button
                     variant='text'
-                    // style={page === 'contact' ? clickStyle : defaultStyle}
-                    style={{ width: '100%', color: 'black' }}
+                    style={drawerMenuStyle}
                     onClick={() => choosePage('contact')}
                   >
-                    {/* <ContactMailIcon />&nbsp; */}
                     Contact
                   </Button>
                   <Divider />
-                  {/* </div> */}
                   <div style={{ width: '100%', textAlign: 'center', padding: '15px', paddingLeft: '15px' }}>
                     <IconButton
                       size="medium"
@@ -207,7 +203,7 @@ const Base = () => {
                   </div>
                 </Box>
               </Drawer>
-              <div style={{ height: window.innerWidth <= 900 ? '50px' : '80px' }}></div>
+              <div style={{ height: '80px' }}></div>
               {(() => {
                 switch (page) {
                   case 'home':
@@ -219,17 +215,13 @@ const Base = () => {
                   case 'contact':
                     return <Contact />;
                   default:
-                    return <Home />;
+                    return <PageWaiter />;
                 }
               })()}
-            </Grid>
-          </Grid>
-        </Grid>
-      </Box>
-      {/* <div className='bottom-Filler'></div> */}
-      <div className='bottom-wrapper'>
-        <Typography variant={window.innerWidth <= 900 ? 'body1' : 'h6'}>Crafted using</Typography>
-        <div>
+              {/* <div className='bottom-Filler'></div> */}
+              <div className='bottom-wrapper'>
+                {/* <Typography variant={window.innerWidth <= 900 ? 'body1' : 'h6'}>Crafted using</Typography> */}
+                {/* <div>
           <Tooltip title="React Js" TransitionComponent={Zoom} placement="top" arrow>
             <img src={ReactJs} alt='React.Js' style={{
               height: window.innerWidth <= 900 ? '20px' : '30px', width: window.innerWidth <= 900 ? '20px' : '30px',
@@ -251,14 +243,21 @@ const Base = () => {
               display: 'inline-block', margin: '10px', borderRadius: '2px'
             }} />
           </Tooltip>
-        </div>
-        <div>
-          (and by myself.)<br /><br />
-          <EmojiEmotionsIcon style={{ color: 'gold' }} /><br /><br />
-          &#169;&nbsp;Midhun S Madhavan,&nbsp;
-          2023
-        </div>
-      </div>
+        </div> */}
+                <div>
+                  <a href='https://www.instagram.com/iammadhavan_m' rel='noreferrer' target='_blank'><InstagramIcon style={{ fontSize: '30px' }} /></a>
+                  <a href='https://www.linkedin.com/in/midhun-s-madhavan/' rel='noreferrer' target='_blank'><LinkedInIcon style={{ fontSize: '30px' }} /></a>
+                  <a href='https://www.youtube.com/channel/UCJbFCDaNbTAX6pp1bxxup0A' rel='noreferrer' target='_blank'><YouTubeIcon style={{ fontSize: '33px' }} /></a>
+                </div>
+                <div>
+                  <EmojiEmotionsIcon style={{ color: 'gold' }} /><br /><br />
+                  &#169;&nbsp;Midhun S Madhavan,&nbsp;2023
+                </div>
+              </div>
+            </Grid>
+          </Grid>
+        </Grid>
+      </Box>
     </div>
   )
 }

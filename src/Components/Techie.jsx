@@ -219,7 +219,7 @@ const Techie = ({ choosePage }) => {
                                             </ListItemIcon>
                                             <ListItemText className='listText'>
                                                 <Typography variant='body1'>
-                                                    Architecting end-to-end software solutions based on client requirements.
+                                                    <b>ARCHITECTING</b> end-to-end software solutions based on client requirements.
                                                 </Typography>
                                             </ListItemText>
                                         </ListItem>
@@ -229,7 +229,7 @@ const Techie = ({ choosePage }) => {
                                             </ListItemIcon>
                                             <ListItemText className='listText'>
                                                 <Typography variant='body1'>
-                                                    Team management and responsible for overall delivery of the software project.
+                                                    <b>TEAM MANAGEMENT</b> and responsible for overall delivery of the software project.
                                                 </Typography>
                                             </ListItemText>
                                         </ListItem>
@@ -239,7 +239,7 @@ const Techie = ({ choosePage }) => {
                                             </ListItemIcon>
                                             <ListItemText className='listText'>
                                                 <Typography variant='body1'>
-                                                    Cost analysis and quoting for the development requirements.
+                                                    <b>COST ANALYSIS</b> and quoting for the development requirements.
                                                 </Typography>
                                             </ListItemText>
                                         </ListItem>
@@ -249,7 +249,7 @@ const Techie = ({ choosePage }) => {
                                             </ListItemIcon>
                                             <ListItemText className='listText'>
                                                 <Typography variant='body1'>
-                                                    Software development efforts.
+                                                    <b>DEVELOPMENT</b> efforts.
                                                 </Typography>
                                             </ListItemText>
                                         </ListItem>
@@ -310,7 +310,7 @@ const Techie = ({ choosePage }) => {
                                             </ListItemIcon>
                                             <ListItemText className='listText'>
                                                 <Typography variant='body1'>
-                                                    Collecting and analyzing requirements from clients to define the work schedule and technology definitions.
+                                                    <b>COLLECTING</b> and analyzing requirements from clients to define the work schedule and technology definitions.
                                                 </Typography>
                                             </ListItemText>
                                         </ListItem>
@@ -320,7 +320,7 @@ const Techie = ({ choosePage }) => {
                                             </ListItemIcon>
                                             <ListItemText className='listText'>
                                                 <Typography variant='body1'>
-                                                    Designing and developing different aspects of features in the requested application software.
+                                                    <b>DESIGNING</b> and DEVELOPING different aspects of features in the requested application software.
                                                 </Typography>
                                             </ListItemText>
                                         </ListItem>
@@ -381,7 +381,7 @@ const Techie = ({ choosePage }) => {
                                             </ListItemIcon>
                                             <ListItemText className='listText'>
                                                 <Typography variant='body1'>
-                                                    Developing web applications, Web APIs and Microservices using C#, ASP.NET MVC.
+                                                    <b>DEVELOPING</b> web applications, Web APIs and Microservices using C#, ASP.NET MVC.
                                                 </Typography>
                                             </ListItemText>
                                         </ListItem>
@@ -391,7 +391,7 @@ const Techie = ({ choosePage }) => {
                                             </ListItemIcon>
                                             <ListItemText className='listText'>
                                                 <Typography variant='body1'>
-                                                    Supporting releases and DevOps.
+                                                    <b>SUPPORTING</b> releases and DevOps.
                                                 </Typography>
                                             </ListItemText>
                                         </ListItem>
@@ -436,7 +436,7 @@ const Techie = ({ choosePage }) => {
                                             </ListItemIcon>
                                             <ListItemText className='listText'>
                                                 <Typography variant='body1'>
-                                                    Designing and developing small scale custom applications.
+                                                    <b>DESIGNING</b> and developing small scale custom applications.
                                                 </Typography>
                                             </ListItemText>
                                         </ListItem>
@@ -446,7 +446,7 @@ const Techie = ({ choosePage }) => {
                                             </ListItemIcon>
                                             <ListItemText className='listText'>
                                                 <Typography variant='body1'>
-                                                    Supporting releases and DevOps.
+                                                    <b>SUPPORTING</b> releases and DevOps.
                                                 </Typography>
                                             </ListItemText>
                                         </ListItem>
@@ -456,7 +456,7 @@ const Techie = ({ choosePage }) => {
                                             </ListItemIcon>
                                             <ListItemText className='listText'>
                                                 <Typography variant='body1'>
-                                                    Leading a small team of developers.
+                                                    <b>LEADING</b> a small team of developers.
                                                 </Typography>
                                             </ListItemText>
                                         </ListItem>
@@ -517,7 +517,7 @@ const Techie = ({ choosePage }) => {
                                             </ListItemIcon>
                                             <ListItemText className='listText'>
                                                 <Typography variant='body1'>
-                                                    Designing and developing web application using C# and ASP.NET MVC.
+                                                    <b>DESIGNING</b> and developing web application using C# and ASP.NET MVC.
                                                 </Typography>
                                             </ListItemText>
                                         </ListItem>
@@ -527,7 +527,7 @@ const Techie = ({ choosePage }) => {
                                             </ListItemIcon>
                                             <ListItemText className='listText'>
                                                 <Typography variant='body1'>
-                                                    Training the developer’s team in ASP.NET MVC and C#.
+                                                    <b>TRAINING</b> the developer’s team in ASP.NET MVC and C#.
                                                 </Typography>
                                             </ListItemText>
                                         </ListItem>
@@ -585,7 +585,7 @@ const Techie = ({ choosePage }) => {
                                             </ListItemIcon>
                                             <ListItemText className='listText'>
                                                 <Typography variant='body1'>
-                                                    Analyzing customer requirements for custom web/desktop applications.
+                                                    <b>ANALYZING</b> customer requirements for custom web/desktop applications.
                                                 </Typography>
                                             </ListItemText>
                                         </ListItem>
@@ -595,7 +595,7 @@ const Techie = ({ choosePage }) => {
                                             </ListItemIcon>
                                             <ListItemText className='listText'>
                                                 <Typography variant='body1'>
-                                                    Developing web applications using C#/VB.NET and ASP.NET/ASP.NET MVC.
+                                                    <b>DEVELOPING</b> web applications using C#/VB.NET and ASP.NET/ASP.NET MVC.
                                                 </Typography>
                                             </ListItemText>
                                         </ListItem>
@@ -605,7 +605,7 @@ const Techie = ({ choosePage }) => {
                                             </ListItemIcon>
                                             <ListItemText className='listText'>
                                                 <Typography variant='body1'>
-                                                    Developing desktop applications using Windows Forms/WPF.
+                                                    <b>DEVELOPING</b> desktop applications using Windows Forms/WPF.
                                                 </Typography>
                                             </ListItemText>
                                         </ListItem>
@@ -615,7 +615,7 @@ const Techie = ({ choosePage }) => {
                                             </ListItemIcon>
                                             <ListItemText className='listText'>
                                                 <Typography variant='body1'>
-                                                    Developing Windows mobile applications using Silverlight.
+                                                    <b>DEVELOPING</b> Windows mobile applications using Silverlight.
                                                 </Typography>
                                             </ListItemText>
                                         </ListItem>
@@ -676,7 +676,7 @@ const Techie = ({ choosePage }) => {
                                             </ListItemIcon>
                                             <ListItemText className='listText'>
                                                 <Typography variant='body1'>
-                                                    Developing Web applications using C# and ASP.NET.
+                                                    <b>DEVELOPING</b> Web applications using C# and ASP.NET.
                                                 </Typography>
                                             </ListItemText>
                                         </ListItem>
@@ -686,7 +686,7 @@ const Techie = ({ choosePage }) => {
                                             </ListItemIcon>
                                             <ListItemText className='listText'>
                                                 <Typography variant='body1'>
-                                                    Developing desktop applications using Windows Forms and C#.
+                                                    <b>DEVELOPING</b> desktop applications using Windows Forms and C#.
                                                 </Typography>
                                             </ListItemText>
                                         </ListItem>
@@ -695,20 +695,20 @@ const Techie = ({ choosePage }) => {
                             </Grid>
                         </Paper>
                     </Grid>
-                    <Grid item sm={6} xs={12}>
-                        <Paper variant='elevation' className='company' style={{
-                            minHeight: window.innerWidth <= 900 ? 'auto' : '420px',
-                            width: window.innerWidth <= 900 ? '83%' : 'auto',
+                    <Grid item sm={12} xs={12}>
+                        <Paper variant='elevation' elevation={0} className='company' style={{
+                            // minHeight: window.innerWidth <= 900 ? 'auto' : '420px',
+                            // width: window.innerWidth <= 900 ? '83%' : 'auto',
                             textAlign: 'left',
                             margin: 'auto'
                         }}>
                             <div style={{ width: '100%', height: '100%', marginLeft: 0, marginRight: 0 }}>
-                                <EngineeringIcon style={{ fontSize: '100px' }} />
-                                <Typography variant='h5'>
+                                <EngineeringIcon style={{ fontSize: '40px' }} />
+                                <Typography variant='h6'>
                                     Are you looking to expand your technology team? <br />
                                     Are you looking for someone to build your software or website?<br /><br />
                                     <Button variant='outlined'
-                                        style={{ color: 'blue', borderColor: 'blue', float: 'right', bottom: '0px' }}
+                                        style={{ color: '#1B1F3B', borderColor: '#1B1F3B', float: 'right', bottom: '0px' }}
                                         onClick={() => choosePage('contact',
                                             window.innerWidth <= 900 ? true : false,
                                             'techrequest')}>LET'S TALK&nbsp;&nbsp;<NearMeIcon /></Button>

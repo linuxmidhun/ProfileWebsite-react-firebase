@@ -70,8 +70,8 @@ const ArtRequest = () => {
 
     return (
         <div>
-            <Typography variant={window.innerWidth <= 900 ? 'h2' : 'h1'} className='oneLine1' style={{ paddingBottom: '30px', }}>
-                How may{window.innerWidth <= 900 ? <br /> : <>&nbsp;</>}I help you?
+            <Typography variant={'h2'} className='oneLine1' style={{ padding: '30px', paddingTop: '0px', color: 'black' }}>
+                How may I help you?
             </Typography>
             <Box sx={{ display: 'flex', flexGrow: 1 }}>
                 <Grid container spacing={2}>
@@ -85,30 +85,30 @@ const ArtRequest = () => {
                         >
                             <ListItem disablePadding>
                                 <ListItemIcon className='listIcon'>
-                                    <SupportIcon size='small' style={{ color: 'white' }} />                                {/* color: '#04032a' */}
+                                    <SupportIcon size='small' style={{ fontSize: '40px' }} />                                {/* color: '#04032a' */}
                                 </ListItemIcon>
                                 <ListItemText className='listText'>
-                                    <Typography variant='h4'>
+                                    <Typography variant='h5'>
                                         Want my assistance in something?
                                     </Typography>
                                 </ListItemText>
                             </ListItem>
                             <ListItem disablePadding>
                                 <ListItemIcon className='listIcon'>
-                                    <ImportantDevicesIcon size='small' style={{ color: 'white' }} />
+                                    <ImportantDevicesIcon size='small' style={{ fontSize: '40px' }} /> 
                                 </ListItemIcon>
                                 <ListItemText className='listText'>
-                                    <Typography variant='h4'>
+                                    <Typography variant='h5'>
                                         Do you want me to make a software or a website for you?
                                     </Typography>
                                 </ListItemText>
                             </ListItem>
                             <ListItem disablePadding>
                                 <ListItemIcon className='listIcon'>
-                                    <MovieCreationIcon size='small' style={{ color: 'white' }} />
+                                    <MovieCreationIcon size='small' style={{ fontSize: '40px' }} /> 
                                 </ListItemIcon>
                                 <ListItemText className='listText'>
-                                    <Typography variant='h4'>
+                                    <Typography variant='h5'>
                                         Do you want me to be a part in your next movie?
                                     </Typography>
                                 </ListItemText>
@@ -120,7 +120,7 @@ const ArtRequest = () => {
                             padding: window.innerWidth <= 900 ? '10px' : '20px',
                             paddingLeft: window.innerWidth <= 900 ? '25px' : '0px',
                         }}>
-                        <Card elevation={4} style={{ padding: '20px', textAlign: 'center', backgroundColor: '#7481e2' }}>
+                        <Card elevation={1} style={{ padding: '20px', textAlign: 'center', backgroundColor: 'gold' }}>
                             <TextField label='Name' name='from_name' variant='filled'
                                 style={{ width: '100%', backgroundColor: 'white', borderTopLeftRadius: '5px', borderTopRightRadius: '5px' }}
                                 onChange={(e) => handleChange(e)} value={request.from_name} helperText={validation.from_name} /><br /><br />

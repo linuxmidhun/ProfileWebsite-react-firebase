@@ -8,8 +8,8 @@ const Contact = () => {
         <div className='content' style={{ display: 'flow-root', padding: '0px', paddingTop: '10px', paddingBottom: '10px' }}>
             <div style={{
                 width: '100%',
-                paddingTop: window.innerWidth <= 900 ? '10px' : '0px',
-                textAlign: window.innerWidth <= 900 ? 'center' : 'center'
+                paddingTop: '10px',
+                // textAlign: window.innerWidth <= 900 ? 'center' : 'center'
             }}>
                 {/* <br /><br /> */}
                 <ArtRequest />
