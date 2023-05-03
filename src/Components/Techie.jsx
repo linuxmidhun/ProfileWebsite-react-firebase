@@ -16,8 +16,11 @@ import LaunchIcon from '@mui/icons-material/Launch';
 const Techie = ({ choosePage }) => {
     return (
         <div className='content' style={{ display: 'flow-root', paddingBottom: '20px' }}>
-            <Typography variant='h1' className='border-content'>
-                Senior<br />Software<br />Engineer
+            <Typography variant='h2' className='border-content' >
+                {/* Senior<br />Software<br />Engineer */}
+                Developer,<br />
+                Software Engineer,<br />
+                Technology Trainer.
             </Typography>
             {/* // , padding: window.innerWidth <= 900 ? '10px' : '20px', paddingTop: '10px', paddingBottom: '10px' }}> */}
             <div style={{ width: '100%', display: 'block' }}>

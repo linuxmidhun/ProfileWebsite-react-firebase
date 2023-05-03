@@ -245,9 +245,10 @@ const Base = () => {
           </Tooltip>
         </div> */}
                 <div>
-                  <a href='https://www.instagram.com/iammadhavan_m' rel='noreferrer' target='_blank'><InstagramIcon style={{ fontSize: '30px' }} /></a>
-                  <a href='https://www.linkedin.com/in/midhun-s-madhavan/' rel='noreferrer' target='_blank'><LinkedInIcon style={{ fontSize: '30px' }} /></a>
-                  <a href='https://www.youtube.com/channel/UCJbFCDaNbTAX6pp1bxxup0A' rel='noreferrer' target='_blank'><YouTubeIcon style={{ fontSize: '33px' }} /></a>
+                  <a href='https://www.instagram.com/iammadhavan_m' rel='noreferrer' target='_blank'><InstagramIcon style={{ fontSize: '35px', color: 'goldenrod' }} /></a>&nbsp;&nbsp;
+                  <a href='https://www.linkedin.com/in/midhun-s-madhavan/' rel='noreferrer' target='_blank'><LinkedInIcon style={{ fontSize: '35px', color: 'goldenrod' }} /></a>
+                  <br />
+                  <a href='https://www.youtube.com/channel/UCJbFCDaNbTAX6pp1bxxup0A' rel='noreferrer' target='_blank'><YouTubeIcon style={{ fontSize: '40px', color: 'goldenrod' }} /></a>
                 </div>
                 <div>
                   <EmojiEmotionsIcon style={{ color: 'gold' }} /><br /><br />

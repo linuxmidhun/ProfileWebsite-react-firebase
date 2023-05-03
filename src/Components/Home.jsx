@@ -8,7 +8,10 @@ const Home = () => {
             <Box sx={{ display: 'flex', flexGrow: 1, padding: '0px' }}>
                 <Grid container spacing={0} style={{ display: 'flow-root', padding: '0px' }}>
                     <Grid item sm={12} xs={12}
-                        style={{ width: '100%', padding: '0px', float: 'left', textAlign: 'center' }}>
+                        style={{ width: '100%', padding: '100px 0px', float: 'left',
+                         textAlign: 'center', backgroundColor: 'silver',
+                         borderRadius: '0px 200px 0px 200px',
+                          }} className='home-topper'>
                         <img src={img1} alt="MSM" className='imageSet' />
                     </Grid>
                     {/* } */}

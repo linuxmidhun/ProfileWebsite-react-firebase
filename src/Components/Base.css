@@ -21,6 +21,14 @@
     /* text-shadow: -2px -2px #ff0000; */
 }
 
+.home-topper {
+    background-image     : url('../images/studio.png');
+    background-repeat    : no-repeat;
+    background-size      : cover;
+    background-attachment: fixed;
+    background-blend-mode: luminosity;
+}
+
 .oneLine1 {
     color: aqua;
 }
@@ -59,10 +67,10 @@
     -webkit-box-shadow: 0 0 10px 0 silver;
     -moz-box-shadow   : 0 0 10px 0 silver;
     box-shadow        : 0 0 10px 0 silver;
-    background-color  : #444;
+    /* background-color  : #444; */
     background-color  : rgb(61, 53, 43);
     background-color  : whitesmoke;
-    background-color  : #2e2d5d;
+    /* background-color  : #2e2d5d; */
     background-color  : gold;
     padding           : 10px;
     padding-right     : 10px;
@@ -155,7 +163,7 @@
 
 .border-content {
     padding-bottom: 15px;
-    font-size     : 100px !important;
+    font-size     : 80px !important;
     text-shadow   : 5px 5px 5px silver;
 }
 
@@ -242,7 +250,7 @@
     /* background-color  : gold;
     color             : black; */
     padding              : 10px 25px;
-    margin-left          : -40px;
+    margin-left          : -60px;
     border-radius        : 5px;
     font-weight          : bold !important;
     /* -webkit-box-shadow: inset 10px 0 0 0 #657ab6;
@@ -263,7 +271,7 @@
     background-color  : #1B1F3B; */
     /* background           : white; */
     padding                 : 10px 25px;
-    margin-left             : -40px;
+    margin-left             : -60px;
     border-radius           : 4px;
     font-weight             : bold !important;
     /* -webkit-box-shadow   : inset 10px 0 0 0 #7481e2;
@@ -342,7 +350,7 @@
     .border-content {
         /* margin    : 5px !important; */
         padding    : 10px !important;
-        font-size  : 65px !important;
+        font-size  : 60px !important;
         font-weight: bold;
         text-align : left !important;
     }
