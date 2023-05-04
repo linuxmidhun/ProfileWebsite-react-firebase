@@ -17,7 +17,7 @@ import Contact from './Contact'
 // import MaterialUi from '../images/MaterialUi.png'
 // import EmailJs from '../images/EmailJs.png'
 // import Firebase from '../images/Firebase.png'
-import EmojiEmotionsIcon from '@mui/icons-material/EmojiEmotions';
+// import EmojiEmotionsIcon from '@mui/icons-material/EmojiEmotions';
 // import Zoom from '@mui/material/Zoom';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -26,6 +26,7 @@ import PageWaiter from './PageWaiter'
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import YouTubeIcon from '@mui/icons-material/YouTube';
+import GitHubIcon from '@mui/icons-material/GitHub';
 
 
 const Base = () => {
@@ -246,12 +247,12 @@ const Base = () => {
         </div> */}
                 <div>
                   <a href='https://www.instagram.com/iammadhavan_m' rel='noreferrer' target='_blank'><InstagramIcon style={{ fontSize: '35px', color: 'goldenrod' }} /></a>&nbsp;&nbsp;
-                  <a href='https://www.linkedin.com/in/midhun-s-madhavan/' rel='noreferrer' target='_blank'><LinkedInIcon style={{ fontSize: '35px', color: 'goldenrod' }} /></a>
-                  <br />
-                  <a href='https://www.youtube.com/channel/UCJbFCDaNbTAX6pp1bxxup0A' rel='noreferrer' target='_blank'><YouTubeIcon style={{ fontSize: '40px', color: 'goldenrod' }} /></a>
+                  <a href='https://www.linkedin.com/in/midhun-s-madhavan/' rel='noreferrer' target='_blank'><LinkedInIcon style={{ fontSize: '35px', color: 'goldenrod' }} /></a>&nbsp;&nbsp;                  
+                  <a href='https://www.youtube.com/channel/UCJbFCDaNbTAX6pp1bxxup0A' rel='noreferrer' target='_blank'><YouTubeIcon style={{ fontSize: '40px', color: 'goldenrod' }} /></a><br />
+                  <a href='https://github.com/linuxmidhun' rel='noreferrer' target='_blank'><GitHubIcon style={{ fontSize: '30px', color: 'goldenrod' }} /></a>&nbsp;&nbsp;
                 </div>
                 <div>
-                  <EmojiEmotionsIcon style={{ color: 'gold' }} /><br /><br />
+                  {/* <EmojiEmotionsIcon style={{ color: 'gold' }} />*/}<br /><br /> 
                   &#169;&nbsp;Midhun S Madhavan,&nbsp;2023
                 </div>
               </div>
